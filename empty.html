@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card empty">
+    <img src="empty.svg" alt="Пустая коробка" width="220" height="220">
+    <h1>Тут пусто</h1>
+    <p id="user" class="muted"></p>
+    <button class="submit" id="logout" type="button">Выйти</button>
+  </main>
+  <script>
+    const user = localStorage.getItem('currentUser');
+    if (!user) location.replace('index.html');
+    document.getElementById('user').textContent = user;
+    document.getElementById('logout').addEventListener('click', () => {
+      localStorage.removeItem('currentUser');
+      location.replace('index.html');
+    });
+  </script>
+</body>
+</html>

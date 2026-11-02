@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Добро пожаловать</h1>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tab-login" type="button" role="tab">Вход</button>
+      <button class="tab" id="tab-register" type="button" role="tab">Регистрация</button>
+    </div>
+
+    <form id="auth-form" novalidate>
+      <label for="email">Почта</label>
+      <input id="email" type="email" autocomplete="email" required>
+
+      <label for="password">Пароль</label>
+      <input id="password" type="password" autocomplete="current-password" minlength="6" required>
+
+      <div id="repeat-wrap" hidden>
+        <label for="password2">Повторите пароль</label>
+        <input id="password2" type="password" autocomplete="new-password">
+      </div>
+
+      <p id="message" class="message" role="alert"></p>
+      <button class="submit" id="submit" type="submit">Войти</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
